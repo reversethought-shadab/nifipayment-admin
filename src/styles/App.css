@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+body {
+  font-family: 'DM Sans', sans-serif;
+}
+
+option {
+  color: black;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.file-input {
+  transition: border-color 0.3s ease-in-out;
+}
+
+.file-input:hover {
+  border-color: rgb(5, 5, 50); /* Change as per your theme */
+}
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+      opacity: 1;
+      transform: translateY(0);
+  }
+  to {
+      opacity: 0;
+      transform: translateY(-10px);
+  }
+}
+
+.error-message {
+  animation: fadeIn 0.3s ease-in-out;
+  color: #FF0000; /* Red color for errors */
+  font-size: 0.875rem; /* Adjust size as needed */
+  margin-top: 0.25rem;
+}
+
+.error-message.fadeOut {
+  animation: fadeOut 0.3s ease-in-out;
+}
+.otp-transition-enter {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+.otp-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+.otp-transition-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+.otp-transition-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 300ms, transform 300ms;
+}
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in-out;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
