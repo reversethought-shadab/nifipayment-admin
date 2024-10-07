@@ -26,18 +26,9 @@ function SidebarHorizon(props: { routes: IRoute[]; [x: string]: any }) {
         </div>
       </div>
       <div className="mb-7 mt-[58px] h-px bg-gray-300 dark:bg-white/30" />
-
-      {/* Scrollable Nav item */}
       <ul className="mb-auto flex-1 ">
         <Links routes={routes} />
       </ul>
-
-      {/* Free Horizon Card */}
-      {/* <div className="flex justify-center">
-        <SidebarCard />
-      </div> */}
-
-      {/* Nav item end */}
     </div>
   );
 }

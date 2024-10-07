@@ -17,32 +17,24 @@ import Image from 'next/image';
 
 const Navbar = (props: {
   onOpenSidenav: () => void;
-  brandText: string;
+ 
   secondary?: boolean | string;
   [x: string]: any;
 }) => {
-  const { onOpenSidenav, brandText, mini, hovered } = props;
+  const { onOpenSidenav } = props;
   const [darkmode, setDarkmode] = React.useState(
     document.body.classList.contains('dark'),
   );
   return (
     <nav className="sticky top-4 z-40 px-5  flex flex-row flex-wrap items-center justify-between rounded-xl bg-white/10  backdrop-blur-xl dark:bg-[#35394e11]">
       <div className="ml-[6px]">
-        <div className="h-6 w-[224px] pt-1">
-         
-          <NavLink
-            className="text-sm font-normal capitalize text-navy-700  dark:text-brand-800 dark:hover:text-brand-800 hover:no-underline"
-            href="#"
-          >
-           Account Settings
-          </NavLink>
-        </div>
-        <p className="shrink text-[33px] capitalize text-navy-700 dark:text-brand-800">
+       
+        <p className="shrink text-[23px] capitalize text-navy-700 dark:text-brand-800">
           <NavLink
             href="#"
-            className="font-bold capitalize hover:text-navy-700 dark:hover:text-white"
+            className="font-bold capitalize hover:text-navy-700 flex items-center dark:hover:text-white"
           >
-            {brandText}
+           <img src="/logo.png" alt="" /> <span className='text-navy-700 dark:text-brand-800'>Brand name</span>
           </NavLink>
         </p>
       </div>
@@ -170,7 +162,7 @@ const Navbar = (props: {
                 Newsletter Settings
               </a>
               <a
-                href=" "
+                href="/auth/sign-in"
                 className="mt-3 text-sm font-medium text-red-500 hover:text-red-500"
               >
                 Log Out

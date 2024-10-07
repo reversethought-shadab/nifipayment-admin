@@ -35,7 +35,7 @@ const OtpVerification: React.FC<OtpVerificationProps> = ({ maskedEmail, maskedMo
 
   // Handle OTP input change, allowing only numbers
   const handleOtpChange = (value: string, index: number, otpType: 'email' | 'mobile') => {
-    if (/^\d$/.test(value) || value === '') { // Accept only a digit or empty value
+    if (/^\d$/.test(value) || value === '') {
       const otpState = otpType === 'email' ? [...emailOtp] : [...mobileOtp];
       otpState[index] = value;
       otpType === 'email' ? setEmailOtp(otpState) : setMobileOtp(otpState);
@@ -99,7 +99,7 @@ const OtpVerification: React.FC<OtpVerificationProps> = ({ maskedEmail, maskedMo
                 onChange={(e) => handleOtpChange(e.target.value, index, 'email')}
                 maxLength={1}
                 className="border p-2 w-10 text-center"
-                label={`OTP Digit ${index + 1}`}
+              
                 placeholder="0"
               />
             ))}
@@ -131,7 +131,7 @@ const OtpVerification: React.FC<OtpVerificationProps> = ({ maskedEmail, maskedMo
                 onChange={(e) => handleOtpChange(e.target.value, index, 'mobile')}
                 maxLength={1}
                 className="border p-2 w-10 text-center"
-                 label={`OTP Digit ${index + 1}`}
+                
                 placeholder="0"
               />
             ))}

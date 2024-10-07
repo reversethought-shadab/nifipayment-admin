@@ -1,7 +1,7 @@
 'use client';
 // Layout components
 import { usePathname } from 'next/navigation';
-import { useContext, useState } from 'react';
+import {  useState } from 'react';
 import routes from 'routes';
 
 import {
@@ -10,9 +10,7 @@ import {
   isWindowAvailable,
 } from 'utils/navigation';
 import React from 'react';
-import { Portal } from '@chakra-ui/portal';
 import Navbar from 'components/navbar';
-import Sidebar from 'components/sidebar';
 import Footer from 'components/footer/Footer';
 
 export default function Admin({ children }: { children: React.ReactNode }) {
@@ -21,26 +19,26 @@ export default function Admin({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   if (isWindowAvailable()) document.documentElement.dir = 'ltr';
   return (
-    <div className="flex h-full w-full bg-white dark:bg-blue-50">
-      <Sidebar routes={routes} open={open} setOpen={setOpen} variant="admin" />
+    <div className="flex h-full mx-auto max-w-[1400px] bg-white dark:bg-blue-50">
+      {/* <Sidebar routes={routes} open={open} setOpen={setOpen} variant="admin" /> */}
       {/* Navbar & Main Content */}
       <div className="h-full w-full font-dm dark:bg-blue-50">
         {/* Main Content */}
         <main
           className={`mx-2.5  flex-none transition-all dark:!bg-blue-50
-              md:pr-2 xl:ml-[323px]`}
+              md:pr-2 `}
         >
           {/* Routes */}
           <div>
             <Navbar
               onOpenSidenav={() => setOpen(!open)}
-              brandText={getActiveRoute(routes, pathname)}
+              
               secondary={getActiveNavbar(routes, pathname)}
             />
             <div className="mx-auto min-h-screen p-2 !pt-[10px] md:p-2">
               {children}
             </div>
-            <div className="p-3">
+            <div className="sticky bottom-4 z-40 px-5  flex flex-row flex-wrap items-center justify-between rounded-xl bg-white/10  backdrop-blur-xl dark:bg-[#35394e11]">
               <Footer />
             </div>
           </div>

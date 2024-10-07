@@ -81,7 +81,7 @@ const ForgetPassword: React.FC<ForgetPasswordProps> = () => {
         <Default
             maincard={
                 <div className="mb-10 flex h-full w-full items-center justify-center px-2 md:mx-0 md:px-0 lg:mb-2 lg:items-center lg:justify-start">
-                    <div className="mt-[10vh] w-full max-w-full flex-col items-center md:pl-4 lg:pl-0 xl:max-w-[420px]">
+                 <div className="mt-[9vh]  shadow-md  rounded-xl md:mt-[15vh] justify-center p-10   w-full max-w-full flex-col items-center  xl:max-w-[520px]">
                         {otpVerified ? (
                             // Email verification component
                             <div>
